@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import com.dreamDealership.domain.carCollecting.entity.CarCollection;
 import com.dreamDealership.domain.warehouse.entity.Stock;
 
+import java.util.List;
+
 @Component
 public class CarCollectingRepositoryImpl implements com.dreamDealership.domain.CarCollectingRepository {
 
@@ -32,7 +34,7 @@ public class CarCollectingRepositoryImpl implements com.dreamDealership.domain.C
     @Override
     public Stock getStockByModel(String model) {
         var stocks = stockRepository.findByModel(model);
-        return stocks.size() == 0 ? null : stocks.get(0);
+        return stocks.isEmpty() ? null : stocks.get(0);
     }
 
 }

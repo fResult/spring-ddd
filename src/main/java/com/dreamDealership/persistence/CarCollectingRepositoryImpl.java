@@ -34,7 +34,7 @@ public class CarCollectingRepositoryImpl implements com.dreamDealership.domain.C
     @Override
     public Stock getStockByModel(String model) {
         var stocks = stockRepository.findByModel(model);
-        return stocks.isEmpty() ? null : stocks.get(0);
+        return stocks.isEmpty() ? null : stocks.getFirst();
     }
 
 }
